@@ -1,0 +1,563 @@
+/* ===== CSS Variables ===== */
+:root {
+  --bg: #0b0b10;
+  --text: #e6e6ee;
+  --muted: #9aa0a6;
+  --accent: #ff3b84;
+  --accent-2: #3aa3ff;
+  --card: #11121a;
+  --line: #232432;
+  --shadow: 0 10px 24px rgba(0, 0, 0, .35);
+  --radius: 18px;
+  --grad-a: #ff3b84;
+  --grad-b: #3aa3ff;
+  --grad-c: #ffd166;
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
+
+a:hover {
+  opacity: .85;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(1280px, 94%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 26px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+/* ===== Buttons & Badges ===== */
+.btn,
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(255, 59, 132, .25);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.cta {
+  background: #1f2030;
+  color: #fff;
+  border: 1px solid #2a2b3d;
+}
+
+.cta:hover {
+  background: #2a2b40;
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.eyebrow {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.helper {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #151625;
+  border: 1px solid var(--line);
+  color: #cfd2da;
+}
+
+.badges {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+a.card {
+  display: block;
+  color: var(--text);
+}
+
+a.card:hover {
+  transform: translateY(-3px);
+  border-color: #33344a;
+  opacity: 1;
+}
+
+.card .body {
+  padding: 10px;
+}
+
+.card .photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #0f1018;
+}
+
+.card .photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+a.card:hover .photo img {
+  transform: scale(1.04);
+}
+
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  color: #b6bac7;
+  font-size: 12px;
+}
+
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 11, 16, .72);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(255, 59, 132, .25);
+}
+
+nav.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+nav.links a {
+  color: var(--text);
+}
+
+nav.links a.btn,
+nav.links a.cta {
+  color: #fff;
+}
+
+nav.links .btn,
+nav.links .cta {
+  margin-left: 6px;
+}
+
+.menu-btn {
+  display: none;
+  background: #191a27;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+#mobileNav {
+  display: none;
+}
+
+#mobileNav .panel {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+#mobileNav a {
+  display: block;
+  padding: 10px 2px;
+  color: #fff;
+}
+
+/* ===== Hero ===== */
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 6px 0 12px;
+}
+
+.hero p {
+  margin: 0 0 8px;
+}
+
+.hero-images {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  height: 520px;
+}
+
+.hero-images .main,
+.hero-images .thumb {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #0f1018;
+}
+
+.hero-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-images .stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+}
+
+.cta-inline {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Companions Grid ===== */
+#companions .grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ===== Services & Massage Grids ===== */
+#services .grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#services .card .photo {
+  aspect-ratio: 16 / 10;
+}
+
+#erotic-massage .grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#erotic-massage .card .photo {
+  aspect-ratio: 16 / 10;
+}
+
+/* ===== Reviews ===== */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.review {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.review img {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.review .helper {
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+/* ===== About Sections ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.about-photo {
+  aspect-ratio: 16 / 10;
+}
+
+.benefits-card {
+  padding: 16px;
+}
+
+.benefits-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.benefits-card ul {
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+
+.benefits-card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  position: relative;
+}
+
+.benefits-card li::marker {
+  color: var(--accent);
+}
+
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== Gradient Headings ===== */
+h1,
+h2,
+h3 {
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b), var(--grad-c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+/* ===== Responsive: 1200px ===== */
+@media (max-width: 1200px) {
+  #companions .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Responsive: 960px ===== */
+@media (max-width: 960px) {
+  nav.links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  #mobileNav {
+    display: block;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-images {
+    height: 360px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Responsive: 900px ===== */
+@media (max-width: 900px) {
+  #companions .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #services .grid,
+  #erotic-massage .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Responsive: 640px ===== */
+@media (max-width: 640px) {
+  #companions .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero-images {
+    height: 280px;
+  }
+
+  .hero-images .stack {
+    display: none;
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-inline {
+    justify-content: flex-start;
+  }
+
+  .about-grid {
+    gap: 12px;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ===== Responsive: 400px ===== */
+@media (max-width: 400px) {
+  #companions .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #services .grid,
+  #erotic-massage .grid {
+    grid-template-columns: 1fr;
+  }
+}
