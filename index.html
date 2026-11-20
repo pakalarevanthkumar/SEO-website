@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <!-- ===== Header ===== -->
+    <!-- ===== Header ===== -->
   <header>
     <div class="container nav">
-      <div class="brand"><span class="logo"></span> Telugu Saruku </div>
+      <div class="brand">
+        <img src="https://googleadultseo.com/images/logo-bg.png" alt="Telford Elite Logo" class="logo-img">
+        <span>Telugu Saruku</span>
+      </div>
+      
       <nav class="links" aria-label="Primary">
         <a href="#companions">Companions</a>
         <a href="#services">Services</a>
@@ -20,18 +24,31 @@
         <a class="btn" href="tel:+1234567890">Call Us</a>
         <a class="cta" href="https://wa.me/1234567890" target="_blank" rel="nofollow noopener">WhatsApp</a>
       </nav>
-      <button class="menu-btn" aria-controls="mobileNav" aria-expanded="false">Menu ▾</button>
-    </div>
-    <div id="mobileNav" class="container" hidden>
-      <div class="panel">
-        <a href="#companions">Companions</a>
-        <a href="#services">Services</a>
-        <a href="#erotic-massage">Massage</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
-        <a href="tel:+1234567890">Call Us</a>
-        <a href="https://wa.me/1234567890" target="_blank" rel="nofollow noopener">WhatsApp</a>
+
+      <!-- MOBILE DROPDOWN -->
+      <div class="mobile-dropdown-container">
+        <!-- Hamburger Button -->
+        <button class="menu-btn" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="mobileNav" class="dropdown-menu">
+          <a class="dropdown-item" href="#companions">Companions</a>
+          <a class="dropdown-item" href="#services">Services</a>
+          <a class="dropdown-item" href="#erotic-massage">Massage</a>
+          <a class="dropdown-item" href="#reviews">Reviews</a>
+          <a class="dropdown-item" href="#about">About</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="tel:+1234567890">Call Us</a>
+          <a class="dropdown-item" href="https://wa.me/1234567890" target="_blank" rel="nofollow noopener">WhatsApp</a>
+        </div>
       </div>
+
     </div>
   </header>
 
